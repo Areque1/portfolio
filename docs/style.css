@@ -107,17 +107,18 @@ ul, ol, dl, dd { margin: 0; padding: 0; }
   flex-wrap: wrap;
   z-index: 20;
   border-bottom: 1px solid transparent;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 @media (min-width: 641px) {
   :root { --topbar-h: 4.25rem; }
-  .topbar {
-    position: sticky; top: 0;
+  /* Transparente no topo da página, para a constelação passar por trás */
+  .topbar { position: sticky; top: 0; }
+  .topbar.is-scrolled {
     background: var(--topbar-bg);
+    border-bottom-color: var(--rule);
     -webkit-backdrop-filter: saturate(1.4) blur(12px);
     backdrop-filter: saturate(1.4) blur(12px);
   }
-  .topbar.is-scrolled { border-bottom-color: var(--rule); }
 }
 .mark {
   display: inline-grid; place-items: center;
