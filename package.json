@@ -1,0 +1,19 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "description": "Portfólio de Lucas Areque e os testes automatizados do próprio site",
+  "scripts": {
+    "serve": "python3 -m http.server 8765 --bind 127.0.0.1",
+    "lint:html": "html-validate index.html",
+    "test": "playwright test --grep-invert @externo",
+    "test:links": "playwright test --grep @externo --project=chromium",
+    "report": "playwright show-report",
+    "typecheck": "tsc"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.61.0",
+    "@types/node": "24.10.1",
+    "html-validate": "9.7.1",
+    "typescript": "5.9.3"
+  }
+}
