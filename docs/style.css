@@ -59,6 +59,7 @@ html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 body {
+  position: relative;
   margin: 0;
   background: var(--paper);
   color: var(--ink);
@@ -87,8 +88,20 @@ ul, ol, dl, dd { margin: 0; padding: 0; }
 }
 .skip:focus { top: 0.5rem; }
 
+/* Constelação interativa atrás do topo; some suavemente antes da faixa de ferramentas */
+.constelacao {
+  position: absolute; top: 0; left: 0; z-index: 0;
+  display: block;
+  width: 100%; height: 0;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0, #000 62%, transparent 92%);
+  mask-image: linear-gradient(to bottom, #000 0, #000 62%, transparent 92%);
+}
+@media print { .constelacao { display: none; } }
+
 /* Top bar: fixa no topo a partir do tablet, com fundo translúcido */
 .topbar {
+  position: relative;
   padding: 1.25rem max(var(--gutter), calc((100% - var(--max)) / 2 + var(--gutter)));
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
   flex-wrap: wrap;
@@ -136,7 +149,7 @@ ul, ol, dl, dd { margin: 0; padding: 0; }
   .topbar nav a:hover { color: var(--ink); }
 }
 
-main, .contact { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+main, .contact { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
 section[id], footer[id] { scroll-margin-top: var(--topbar-h); }
 
 /* Hero */
