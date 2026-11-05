@@ -2,20 +2,37 @@
 
 Site estático (HTML + CSS, sem build) com meu currículo: QA, automação de testes e infraestrutura de TI.
 
-## Ver localmente
+## Estrutura
 
-Abra `index.html` no navegador, ou rode:
-
-```bash
-python3 -m http.server 8000
+```text
+docs/       o site publicado (index.html e style.css)
+tests/      testes Playwright do site
+package.json, playwright.config.ts, tsconfig.json, .htmlvalidate.json
+            configuração dos testes
 ```
 
-e acesse http://localhost:8000.
+O site fica em `docs/` porque é uma das duas pastas que o GitHub Pages publica direto de uma branch.
+
+## Ver localmente
+
+Abra `docs/index.html` no navegador, ou rode:
+
+```bash
+npm run serve
+```
+
+e acesse http://localhost:8765.
 
 ## Publicar no GitHub Pages
 
-Em **Settings → Pages**, escolha *Deploy from a branch*, branch `main`, pasta `/ (root)`.
+Em **Settings → Pages**, escolha *Deploy from a branch*, branch `main`, pasta `/docs`.
 O site fica em `https://areque1.github.io/portfolio/`.
+
+## Branches
+
+- `main`: o que está publicado. Só recebe pull request da `development`.
+- `development`: integração. Recebe as branches de trabalho.
+- `feat-*` e `fix-*`: saem da `development` e voltam para ela por pull request.
 
 ## Testes automatizados
 

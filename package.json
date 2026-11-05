@@ -3,8 +3,8 @@
   "private": true,
   "description": "Portfólio de Lucas Areque e os testes automatizados do próprio site",
   "scripts": {
-    "serve": "python3 -m http.server 8765 --bind 127.0.0.1",
-    "lint:html": "html-validate index.html",
+    "serve": "python3 -m http.server 8765 --bind 127.0.0.1 --directory docs",
+    "lint:html": "html-validate docs/index.html",
     "test": "playwright test --grep-invert @externo",
     "test:links": "playwright test --grep @externo --project=chromium",
     "report": "playwright show-report",
