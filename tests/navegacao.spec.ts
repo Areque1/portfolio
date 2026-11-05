@@ -57,3 +57,26 @@ test('os links de contato apontam para o e-mail, LinkedIn e GitHub certos', asyn
   await expect(page.locator('a[href="https://www.linkedin.com/in/lucas-areque"]').first()).toBeVisible();
   await expect(page.locator('a[href="https://github.com/Areque1"]').first()).toBeVisible();
 });
+
+test('o rodapé tem ícones de GitHub, LinkedIn e e-mail com nome acessível', async ({ page }) => {
+  await abrir(page);
+  const rodape = page.locator('#contato');
+  const esperados = {
+    GitHub: 'https://github.com/Areque1',
+    LinkedIn: 'https://www.linkedin.com/in/lucas-areque',
+    'E-mail': 'mailto:lucasareque@gmail.com',
+  };
+  for (const [nome, destino] of Object.entries(esperados)) {
+    const link = rodape.getByRole('link', { name: nome, exact: true });
+    await expect(link).toBeVisible();
+    await expect(link).toHaveAttribute('href', destino);
+    const caixa = await link.boundingBox();
+    // Área de clique confortável no celular (WCAG 2.5.8 pede ao menos 24px).
+    expect(caixa!.width).toBeGreaterThanOrEqual(44);
+    expect(caixa!.height).toBeGreaterThanOrEqual(44);
+  }
+  // O primeiro ícone alinha com o texto do rodapé.
+  const icone = await rodape.locator('.social svg').first().boundingBox();
+  const titulo = await rodape.locator('h2').boundingBox();
+  expect(Math.abs(icone!.x - titulo!.x)).toBeLessThan(2);
+});
