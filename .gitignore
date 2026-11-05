@@ -1,4 +1,9 @@
-ev/
+# Dependências
 node_modules/
+
+# Saída dos testes (Playwright)
 test-results/
 playwright-report/
+
+# Arquivos pessoais de referência, fora do repositório (currículos, exports do LinkedIn)
+ev/

@@ -5,10 +5,12 @@
   "scripts": {
     "serve": "python3 -m http.server 8765 --bind 127.0.0.1 --directory docs",
     "lint:html": "html-validate docs/index.html",
+    "lint:js": "for f in docs/js/*.js; do node --check \"$f\" || exit 1; done",
+    "typecheck": "tsc",
     "test": "playwright test --grep-invert @externo",
     "test:links": "playwright test --grep @externo --project=chromium",
-    "report": "playwright show-report",
-    "typecheck": "tsc"
+    "check": "npm run lint:html && npm run lint:js && npm run typecheck && npm test",
+    "report": "playwright show-report"
   },
   "devDependencies": {
     "@playwright/test": "1.61.0",
