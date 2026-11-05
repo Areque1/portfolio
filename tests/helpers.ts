@@ -9,13 +9,16 @@ export async function abrir(page: Page) {
   await page.evaluate(() => document.fonts.ready);
 }
 
-/** Elementos que passam da borda da tela. O terminal rola por dentro e fica de fora. */
+/**
+ * Elementos que passam da borda da tela. Ficam de fora o terminal, que rola por dentro,
+ * e a faixa de ferramentas em movimento, que esconde o excesso de propósito.
+ */
 export function elementosForaDaTela(page: Page) {
   return page.evaluate(() => {
     const vw = document.documentElement.clientWidth;
     const fora: string[] = [];
     for (const el of document.querySelectorAll('body *')) {
-      if (el.closest('.term pre')) continue;
+      if (el.closest('.term pre, .marquee.is-moving')) continue;
       const r = el.getBoundingClientRect();
       if (r.width && (r.right > vw + 1 || r.left < -1)) {
         fora.push(`${el.tagName.toLowerCase()}.${el.className} [${Math.round(r.left)}..${Math.round(r.right)}]`);
