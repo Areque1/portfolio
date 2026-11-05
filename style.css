@@ -273,3 +273,6 @@ main, .contact { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter)
   .term .ln i { display: none; }
   .skills, .courses, .edu { grid-template-columns: minmax(0, 1fr); }
 }
+@media (max-width: 380px) {
+  .term pre { font-size: 0.66rem; padding: 0.9rem 0.85rem; }
+}
