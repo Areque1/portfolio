@@ -6,17 +6,25 @@ for (const secao of ['experiencia', 'competencias', 'formacao', 'contato']) {
     await abrir(page);
     await page.locator(`.topbar nav a[href="#${secao}"]`).click();
     await expect(page).toHaveURL(new RegExp(`#${secao}$`));
-    // A rolagem é suave: espera ela parar com a seção no topo ou com a página no fim.
+    // A rolagem é suave: espera ela parar com a seção logo abaixo da barra fixa do topo
+    // (scroll-margin-top) ou com a página no fim.
     await expect
       .poll(() =>
         page.evaluate(id => {
-          const topo = document.getElementById(id)!.getBoundingClientRect().top;
+          const alvo = document.getElementById(id)!;
+          const topo = alvo.getBoundingClientRect().top;
+          const margem = parseFloat(getComputedStyle(alvo).scrollMarginTop) || 0;
           const noFim = Math.ceil(scrollY + innerHeight) >= document.documentElement.scrollHeight - 2;
-          return Math.abs(topo) < 5 || noFim;
+          return Math.abs(topo - margem) < 5 || noFim;
         }, secao),
       )
       .toBe(true);
     await expect(page.locator(`#${secao}`)).toBeInViewport();
+    // O título da seção não fica escondido atrás da barra fixa.
+    const barra = await page.locator('.topbar').boundingBox();
+    const titulo = await page.locator(`#${secao} h2`).boundingBox();
+    expect(titulo!.y).toBeGreaterThanOrEqual(Math.max(0, barra!.y + barra!.height));
+    await expect(page.locator(`.topbar nav a[href="#${secao}"]`)).toHaveClass(/is-active/);
   });
 }
 
