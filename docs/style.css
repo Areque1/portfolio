@@ -482,7 +482,19 @@ main { counter-reset: secao; }
 .contact .fine a { text-decoration: none; }
 .contact .fine a:hover { color: var(--ink); text-decoration: underline; }
 
+/* Entrada suave das seções ao rolar (só com JS e sem "reduzir movimento") */
+/* Anima os filhos, não a seção: assim a âncora do menu cai no lugar certo */
+.reveal-on .block > *,
+.reveal-on .contact > * {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+}
+.reveal-on .is-visible > * { opacity: 1; transform: none; }
+.reveal-on .is-visible > :nth-child(2) { transition-delay: 60ms; }
+.reveal-on .is-visible > :nth-child(n+3) { transition-delay: 120ms; }
 @media print {
+  .reveal-on .block > *, .reveal-on .contact > * { opacity: 1; transform: none; }
   .topbar { position: static; }
 }
 
