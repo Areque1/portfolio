@@ -389,7 +389,7 @@ main { counter-reset: secao; }
   .skills div:hover { border-top-color: var(--pass); transform: translateY(-2px); }
 }
 
-/* Education */
+/* Formação */
 .edu {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
@@ -420,16 +420,18 @@ main { counter-reset: secao; }
 }
 
 .courses-title { margin: clamp(2.5rem, 6vw, 3.5rem) 0 0.4rem; font-size: 1.3rem; font-stretch: 110%; }
-.courses {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2rem 2.5rem;
+/* Colunas em vez de grade: os grupos têm tamanhos diferentes e não sobram buracos */
+.courses { columns: 3 16rem; column-gap: 2.5rem; }
+.courses > div { break-inside: avoid; padding-bottom: 2rem; }
+.courses h4 {
+  font-size: 0.95rem; font-weight: 700;
+  margin-bottom: 0.75rem; padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
 }
-.courses h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.6rem; }
 .courses ul { list-style: none; font-size: 0.95rem; line-height: 1.45; }
-.courses li + li { margin-top: 0.55rem; }
+.courses li + li { margin-top: 0.65rem; }
 .courses-note { color: var(--muted); font-size: 0.95rem; margin-bottom: 1.75rem; }
-.courses a { text-decoration-color: var(--rule); }
+.courses a { text-decoration-color: var(--rule); transition: text-decoration-color 0.15s ease; }
 .courses a:hover { text-decoration-color: currentColor; }
 .courses li span { display: block; color: var(--muted); font-size: 0.85rem; }
 
@@ -476,7 +478,7 @@ main { counter-reset: secao; }
 /* Responsivo */
 @media (max-width: 920px) {
   .hero-grid { grid-template-columns: minmax(0, 1fr); }
-  .skills, .courses { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 640px) {
   .job {
@@ -501,7 +503,7 @@ main { counter-reset: secao; }
   .term pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 1rem; }
   .term .ln i { display: none; }
   .term-title { display: none; }
-  .skills, .courses, .edu { grid-template-columns: minmax(0, 1fr); }
+  .skills, .edu { grid-template-columns: minmax(0, 1fr); }
   .logo { width: 1.9rem; height: 1.9rem; }
 }
 @media (max-width: 380px) {
