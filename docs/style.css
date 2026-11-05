@@ -257,7 +257,11 @@ section[id], footer[id] { scroll-margin-top: var(--topbar-h); }
   gap: 1.75rem;
 }
 .tools-row { display: grid; gap: 0.85rem; }
-.tools dt { color: var(--muted); font-size: 0.9rem; }
+.tools dt {
+  color: var(--muted);
+  font: 500 0.78rem/1.4 var(--mono);
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
 .tools ul {
   list-style: none;
   display: flex; flex-wrap: wrap; align-items: center;
@@ -298,7 +302,8 @@ section[id], footer[id] { scroll-margin-top: var(--topbar-h); }
   .marquee.is-moving .track { animation: none; }
 }
 
-/* Sections */
+/* Seções, numeradas como num relatório */
+main { counter-reset: secao; }
 .block { padding: clamp(3rem, 7vw, 5rem) 0; border-top: 1px solid var(--rule); }
 .block > h2, .contact > h2 {
   font-size: clamp(1.6rem, 3.4vw, 2.25rem);
@@ -306,6 +311,16 @@ section[id], footer[id] { scroll-margin-top: var(--topbar-h); }
   letter-spacing: -0.02em;
   margin-bottom: clamp(1.75rem, 4vw, 2.75rem);
 }
+.block > h2::before, .contact > h2::before {
+  counter-increment: secao;
+  content: counter(secao, decimal-leading-zero);
+  display: block;
+  margin-bottom: 0.7rem;
+  font: 500 0.8rem/1 var(--mono);
+  letter-spacing: 0.08em;
+  color: var(--pass);
+}
+.contact > h2::before { content: "04"; }
 
 /* Experience timeline: a real chronological sequence */
 .timeline { list-style: none; }
