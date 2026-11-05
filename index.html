@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lucas Areque | QA e Infraestrutura</title>
+  <meta name="description" content="Portfólio de Lucas Gomes Guimarães Areque: automação de testes E2E e de API, CI/CD e infraestrutura de TI em Manaus.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2317283A'/%3E%3Cpath d='M9 16.5l4.5 4.5L23 11.5' fill='none' stroke='%236FD3A0' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topbar">
+    <a class="mark" href="#topo" aria-label="Início">LA</a>
+    <nav aria-label="Seções">
+      <a href="#experiencia">Experiência</a>
+      <a href="#competencias">Competências</a>
+      <a href="#formacao">Formação</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="topo">
+      <h1 class="name">Lucas Gomes<br>Guimarães Areque</h1>
+
+      <div class="hero-grid">
+        <div class="intro">
+          <p class="role">Qualidade de software e infraestrutura de TI, em Manaus.</p>
+          <p>No QA, analiso requisitos, escrevo cenários e casos de teste, automatizo testes E2E com Playwright e testes de API com Python e pytest, e coloco tudo para rodar no GitLab CI. Na infraestrutura, cuido de Active Directory, Windows Server, firewall e redes. Curso Engenharia da Computação na FAMETRO e estou direcionando minha carreira para qualidade de software, com foco em testes de API e automação.</p>
+          <ul class="links">
+            <li><a href="mailto:lucasareque@gmail.com">lucasareque@gmail.com</a></li>
+            <li><a href="https://www.linkedin.com/in/lucas-areque" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/Areque1" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+        </div>
+
+        <figure class="term" aria-label="Resumo das competências no formato de um relatório do pytest">
+          <div class="term-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+          <pre><code><span class="ln prompt" style="--i:0">$ pytest perfil/ -v</span>
+<span class="ln" style="--i:1"><i>test_e2e.py::</i><b>test_47_cenarios_em_3_navegadores</b> <em>PASSED</em></span>
+<span class="ln" style="--i:2"><i>test_api.py::</i><b>test_valida_api_com_pytest</b> <em>PASSED</em></span>
+<span class="ln" style="--i:3"><i>test_api.py::</i><b>test_explora_api_com_postman_e_swagger</b> <em>PASSED</em></span>
+<span class="ln" style="--i:4"><i>test_gestao.py::</i><b>test_todo_teste_tem_caso_no_zephyr</b> <em>PASSED</em></span>
+<span class="ln" style="--i:5"><i>test_gestao.py::</i><b>test_registra_defeitos_no_mantis</b> <em>PASSED</em></span>
+<span class="ln" style="--i:6"><i>test_ci.py::</i><b>test_bloqueia_merge_request_com_falha</b> <em>PASSED</em></span>
+<span class="ln" style="--i:7"><i>test_infra.py::</i><b>test_administra_active_directory</b> <em>PASSED</em></span>
+<span class="ln" style="--i:8"><i>test_infra.py::</i><b>test_configura_firewall_e_ubiquiti</b> <em>PASSED</em></span>
+<span class="ln summary" style="--i:9">========== 8 passed in 0.42s ==========</span></code></pre>
+        </figure>
+      </div>
+    </section>
+
+    <section class="block" id="experiencia" aria-labelledby="h-exp">
+      <h2 id="h-exp">Experiência</h2>
+      <ol class="timeline">
+        <li class="job">
+          <p class="when"><time datetime="2026-06">jun 2026</time> até hoje <span class="live">em andamento</span></p>
+          <div>
+            <h3>Voluntário QA</h3>
+            <p class="org">Laboratório de Manufatura Avançada, meio período</p>
+            <p class="lead">Automação de testes de um sistema web, cobrindo front-end, API e serviços.</p>
+            <ul>
+              <li>47 cenários E2E com Playwright e TypeScript, executados em Chromium, Firefox e WebKit, com screenshot quando falham e trace nas novas tentativas.</li>
+              <li>Testes de API em Python e pytest, organizados em 23 marcadores próprios e separados em funcionais e não funcionais.</li>
+              <li>Rastreabilidade com o Zephyr pelos marcadores no código, com uma verificação automática que barra qualquer teste sem caso mapeado no catálogo.</li>
+              <li>Catálogo de qualidade com casos de teste e bugs integrados ao Mantis, planos de teste e revisões de cobertura de requisitos.</li>
+              <li>Testes unitários e de integração com Jest e ts-jest na API em NestJS, e com Vitest e Testing Library no front-end em React.</li>
+              <li>Pipeline no GitLab CI que roda os testes em cada merge request, bloqueia a integração quando algo falha e guarda relatórios JUnit e evidências.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="job">
+          <p class="when"><time datetime="2025-10">out 2025</time> até hoje <span class="live">em andamento</span></p>
+          <div>
+            <h3>Analista de Sistemas de TI</h3>
+            <p class="org">TIC do Norte, meio período</p>
+            <p class="lead">Suporte e infraestrutura de TI em ambiente corporativo, com foco em manter os serviços disponíveis e os usuários atendidos.</p>
+            <ul>
+              <li>Administração de usuários, grupos e políticas de acesso no Active Directory, da criação à desativação de contas.</li>
+              <li>Suporte técnico N1 e N2, presencial e remoto, com registro, triagem e tratamento dos chamados até a solução.</li>
+              <li>Administração e monitoramento de servidores Windows Server.</li>
+              <li>Configuração de regras de firewall, políticas de segurança de rede e equipamentos Ubiquiti.</li>
+              <li>Diagnóstico de problemas de conectividade em redes TCP/IP e ambientes Windows.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="job">
+          <p class="when"><time datetime="2025-01">jan 2025</time> a <time datetime="2026-05">mai 2026</time></p>
+          <div>
+            <h3>Estagiário de TI</h3>
+            <p class="org">Secretaria de Estado do Meio Ambiente (SEMA)</p>
+            <ul>
+              <li>Suporte técnico N1 e N2 em hardware, software e conectividade.</li>
+              <li>Preparação, instalação e manutenção de estações de trabalho.</li>
+              <li>Administração de usuários, grupos e permissões no Active Directory.</li>
+              <li>Apoio à administração de servidores Windows e da infraestrutura de redes.</li>
+              <li>Suporte à configuração e manutenção de equipamentos de rede e firewall.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="job">
+          <p class="when"><time datetime="2023-02">fev 2023</time> a <time datetime="2024-12">dez 2024</time></p>
+          <div>
+            <h3>Estagiário</h3>
+            <p class="org">Instituto de Proteção Ambiental do Amazonas (IPAAM)</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="block" id="competencias" aria-labelledby="h-comp">
+      <h2 id="h-comp">Competências</h2>
+      <dl class="skills">
+        <div>
+          <dt>Automação de testes</dt>
+          <dd>Playwright com TypeScript, pytest, Jest e ts-jest, Vitest, Testing Library</dd>
+        </div>
+        <div>
+          <dt>Testes de API</dt>
+          <dd>Python, pytest, Postman, Swagger</dd>
+        </div>
+        <div>
+          <dt>Qualidade de software</dt>
+          <dd>Análise de requisitos, cenários e casos de teste, testes E2E e cross-browser, testes funcionais e não funcionais, evidências</dd>
+        </div>
+        <div>
+          <dt>Gestão e processos</dt>
+          <dd>Zephyr, Mantis, rastreabilidade de requisitos, relatórios JUnit, Scrum e Kanban</dd>
+        </div>
+        <div>
+          <dt>CI/CD e DevOps</dt>
+          <dd>GitLab CI, Docker, Git, Linux CLI, shell script</dd>
+        </div>
+        <div>
+          <dt>Banco de dados</dt>
+          <dd>SQL, MySQL, SQLite</dd>
+        </div>
+        <div>
+          <dt>Infraestrutura e redes</dt>
+          <dd>Active Directory, firewall, Ubiquiti, redes TCP/IP, VLANs, Wi-Fi</dd>
+        </div>
+        <div>
+          <dt>Sistemas operacionais</dt>
+          <dd>Linux, Windows, Windows Server</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="block" id="formacao" aria-labelledby="h-form">
+      <h2 id="h-form">Formação</h2>
+      <div class="edu">
+        <div class="degree">
+          <h3>Engenharia da Computação</h3>
+          <p>FAMETRO, noturno, 6º período</p>
+          <p class="muted">Início em 2024, conclusão prevista para dezembro de 2028</p>
+          <div class="progress" role="img" aria-label="6 de 10 períodos concluídos">
+            <span style="--n:6"></span>
+          </div>
+        </div>
+        <div class="langs">
+          <h3>Idiomas</h3>
+          <p>Português, nativo</p>
+          <p>Inglês, básico</p>
+        </div>
+      </div>
+
+      <h3 class="courses-title">Cursos e certificados</h3>
+      <p class="courses-note">Os cursos com link abrem o certificado na plataforma onde foi emitido.</p>
+      <div class="courses">
+        <div>
+          <h4>Qualidade e equipes</h4>
+          <ul>
+            <li><a href="https://cursos.alura.com.br/certificate/2ac5e7cb-f501-4b86-83c1-c45337c4e431" target="_blank" rel="noopener">Quality Assurance: plano de testes e gestão de bugs</a> <span>Alura, abr 2026</span></li>
+            <li>Fundamentos em teste de software <span>TIC em Trilhas, jun 2026</span></li>
+            <li><a href="https://cursos.alura.com.br/certificate/8b9e2387-f21e-4433-9033-428577112ca9" target="_blank" rel="noopener">Equipes ágeis: organizando os papéis em uma equipe</a> <span>Alura, jun 2026</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4>CI/CD e DevOps</h4>
+          <ul>
+            <li><a href="https://cursos.alura.com.br/certificate/40e246ed-6569-4240-bbf6-44a6e8ddf403" target="_blank" rel="noopener">CI/CD e DevOps: implementar pipelines automatizados e seguros</a> <span>Alura, out 2026</span></li>
+            <li><a href="https://cursos.alura.com.br/certificate/b3357bb8-3fa5-4e49-9926-4093edd7939c" target="_blank" rel="noopener">Docker: criando e gerenciando containers</a> <span>Alura, mai 2026</span></li>
+            <li><a href="https://cursos.alura.com.br/certificate/d2917718-cec3-4b12-b74f-f5ed2710a9ad" target="_blank" rel="noopener">DevOps: explorando conceitos, comandos e scripts no Linux CLI</a> <span>Alura, mai 2026</span></li>
+            <li><a href="https://cursos.alura.com.br/certificate/617171ed-56e3-4552-98fc-8439242d5774" target="_blank" rel="noopener">Git e GitHub: compartilhando e colaborando em projetos</a> <span>Alura, mar 2026</span></li>
+            <li>DevOps: trabalhando com tráfego seguro em comunicações web <span>Alura</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Redes</h4>
+          <ul>
+            <li><a href="https://www.udemy.com/certificate/UC-4bc05bf7-8d66-454d-a9d4-d7ff371040fe/" target="_blank" rel="noopener">Redes de Computadores Completo: do básico ao avançado</a> <span>Udemy, out 2025</span></li>
+            <li><a href="https://cursos.alura.com.br/certificate/fd533ba7-01d3-45b6-a5af-7d42d8c4d0eb" target="_blank" rel="noopener">Redes Wi-Fi: criando uma rede sem fio de modo seguro</a> <span>Alura, abr 2026</span></li>
+            <li><a href="https://cursos.alura.com.br/certificate/6a7ba354-d0c1-429f-b5cd-774105366e83" target="_blank" rel="noopener">Redes: implementando roteamento, DNS e IPv6</a> <span>Alura, abr 2026</span></li>
+            <li><a href="https://cursos.alura.com.br/certificate/cc498ace-65b0-45aa-a32c-e9d106bdf33b" target="_blank" rel="noopener">Redes: construindo um projeto com VLANs, políticas de acesso e conexão com internet</a> <span>Alura, mar 2026</span></li>
+            <li><a href="https://cursos.alura.com.br/certificate/c7d2fc34-e860-4b66-95ad-2c7af16a2021" target="_blank" rel="noopener">Redes: dos conceitos iniciais à criação de uma intranet</a> <span>Alura, fev 2026</span></li>
+            <li>Redes e Protocolos: fundamentos da web <span>Alura</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Programação e dados</h4>
+          <ul>
+            <li><a href="https://cursos.alura.com.br/certificate/00d56c38-c34b-43a6-b5cf-1b61d991fc17" target="_blank" rel="noopener">SQLite online: conhecendo instruções SQL</a> <span>Alura, out 2026</span></li>
+            <li>Python: crie a sua primeira aplicação <span>Alura</span></li>
+            <li><a href="https://cursos.alura.com.br/certificate/9a401c04-b6ee-4407-a8b3-e8c684e9f103" target="_blank" rel="noopener">Lógica de programação: praticando com desafios</a> <span>Alura, abr 2026</span></li>
+            <li><a href="https://cursos.alura.com.br/certificate/a8bf551d-871c-4a0a-adf2-98884fa0f24d" target="_blank" rel="noopener">Lógica de programação: explore funções e listas</a> <span>Alura, abr 2026</span></li>
+            <li><a href="https://cursos.alura.com.br/certificate/f7ec085d-54eb-4e9d-9b17-7dd2d85f8bea" target="_blank" rel="noopener">Lógica de programação: mergulhe em programação com JavaScript</a> <span>Alura, mar 2026</span></li>
+            <li><a href="https://cursos.alura.com.br/certificate/a42afada-4170-43f3-9ccb-51aa3a88d590" target="_blank" rel="noopener">C: avançando na linguagem</a> <span>Alura, abr 2026</span></li>
+            <li><a href="https://cursos.alura.com.br/certificate/039b22a2-13af-492f-a77e-bbc32538d216" target="_blank" rel="noopener">C: conhecendo a Linguagem das Linguagens</a> <span>Alura, abr 2026</span></li>
+            <li><a href="https://cursos.alura.com.br/certificate/36a2f5bf-e977-4e91-8d5a-ae832c2e21da" target="_blank" rel="noopener">Começando em Programação: carreira e primeiros passos</a> <span>Alura, mar 2026</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Sistemas e ferramentas</h4>
+          <ul>
+            <li><a href="https://cursos.alura.com.br/certificate/d3650daf-9cba-42c9-ae17-81fabfd257aa" target="_blank" rel="noopener">Linux: gerenciando diretórios, arquivos, permissões e processos</a> <span>Alura, jan 2026</span></li>
+            <li><a href="https://cursos.alura.com.br/certificate/d4c5275d-d364-4c15-846f-6d6c3a90e3e9" target="_blank" rel="noopener">Terminal: aprenda comandos para executar tarefas</a> <span>Alura, fev 2026</span></li>
+            <li><a href="https://cursos.alura.com.br/certificate/890539e4-3b55-400a-80ef-6853c52db0b3" target="_blank" rel="noopener">Windows Prompt: utilizando o CMD</a> <span>Alura, fev 2026</span></li>
+            <li>Excel Avançado <span>Fundação Bradesco</span></li>
+            <li>Word Avançado <span>Fundação Bradesco</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="contact" id="contato">
+    <h2>Contato</h2>
+    <p>Aberto a oportunidades em QA e automação de testes.</p>
+    <a class="big-mail" href="mailto:lucasareque@gmail.com">lucasareque@gmail.com</a>
+    <ul class="links">
+      <li><a href="https://www.linkedin.com/in/lucas-areque" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://github.com/Areque1" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+    <p class="fine">Manaus, AM</p>
+  </footer>
+</body>
+</html>
