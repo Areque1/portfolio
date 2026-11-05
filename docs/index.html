@@ -53,6 +53,47 @@
 <span class="ln summary" style="--i:9">========== 8 passed in 0.42s ==========</span></code></pre>
         </figure>
       </div>
+
+      <dl class="tools">
+        <div class="tools-row">
+          <dt>No trabalho</dt>
+          <dd class="marquee">
+            <ul class="track">
+                <li><img class="logo" src="icons/playwright.svg" alt="" width="40" height="40">Playwright</li>
+                <li><img class="logo" src="icons/typescript.svg" alt="" width="40" height="40">TypeScript</li>
+                <li><img class="logo" src="icons/python.svg" alt="" width="40" height="40">Python</li>
+                <li><img class="logo" src="icons/pytest.svg" alt="" width="40" height="40">pytest</li>
+                <li><img class="logo" src="icons/jest.svg" alt="" width="40" height="40">Jest</li>
+                <li><img class="logo" src="icons/vitest.svg" alt="" width="40" height="40">Vitest</li>
+                <li><img class="logo" src="icons/testinglibrary.svg" alt="" width="40" height="40">Testing Library</li>
+                <li><img class="logo" src="icons/postman.svg" alt="" width="40" height="40">Postman</li>
+                <li><img class="logo" src="icons/swagger.svg" alt="" width="40" height="40">Swagger</li>
+                <li><img class="logo" src="icons/gitlab.svg" alt="" width="40" height="40">GitLab CI</li>
+                <li><img class="logo" src="icons/docker.svg" alt="" width="40" height="40">Docker</li>
+                <li><img class="logo" src="icons/git.svg" alt="" width="40" height="40">Git</li>
+                <li><span class="logo mono" aria-hidden="true">Z</span>Zephyr</li>
+                <li><span class="logo mono" aria-hidden="true">M</span>Mantis</li>
+                <li><img class="logo" src="icons/linux.svg" alt="" width="40" height="40">Linux</li>
+                <li><img class="logo" src="icons/windows.svg" alt="" width="40" height="40">Windows Server</li>
+                <li><span class="logo mono" aria-hidden="true">AD</span>Active Directory</li>
+                <li><img class="logo" src="icons/ubiquiti.svg" alt="" width="40" height="40">Ubiquiti</li>
+            </ul>
+          </dd>
+        </div>
+        <div class="tools-row">
+          <dt>Em cursos e estudos</dt>
+          <dd class="marquee">
+            <ul class="track">
+                <li><img class="logo" src="icons/javascript.svg" alt="" width="40" height="40">JavaScript</li>
+                <li><img class="logo escurece-claro" src="icons/c.svg" alt="" width="40" height="40">C</li>
+                <li><img class="logo" src="icons/sqlite.svg" alt="" width="40" height="40">SQLite</li>
+                <li><img class="logo clareia-escuro" src="icons/mysql.svg" alt="" width="40" height="40">MySQL</li>
+                <li><img class="logo inverte-escuro" src="icons/github.svg" alt="" width="40" height="40">GitHub</li>
+                <li><img class="logo inverte-claro" src="icons/bash.svg" alt="" width="40" height="40">Bash</li>
+            </ul>
+          </dd>
+        </div>
+      </dl>
     </section>
 
     <section class="block" id="experiencia" aria-labelledby="h-exp">
@@ -238,5 +279,30 @@
     </ul>
     <p class="fine">Manaus, AM</p>
   </footer>
+  <script>
+    // Faixa de ferramentas em movimento contínuo. Sem JavaScript, ou com
+    // "reduzir movimento" ligado, a lista fica parada e completa.
+    (() => {
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const MIN_LARGURA = 1200; // maior que a faixa em qualquer tela
+      const VELOCIDADE = 40; // px por segundo
+      document.querySelectorAll('.marquee').forEach(faixa => {
+        const lista = faixa.querySelector('.track');
+        const itens = [...lista.children];
+        faixa.classList.add('is-moving');
+        while (lista.scrollWidth < MIN_LARGURA) {
+          itens.forEach(item => {
+            const copia = item.cloneNode(true);
+            copia.setAttribute('aria-hidden', 'true');
+            lista.append(copia);
+          });
+        }
+        const segunda = lista.cloneNode(true);
+        segunda.setAttribute('aria-hidden', 'true');
+        faixa.append(segunda);
+        faixa.style.setProperty('--dur', `${lista.scrollWidth / VELOCIDADE}s`);
+      });
+    })();
+  </script>
 </body>
 </html>

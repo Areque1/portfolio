@@ -28,6 +28,10 @@
     --term-bg: #08111A;
     color-scheme: dark;
   }
+  :root:not([data-theme="light"]) .logo.inverte-claro,
+  :root:not([data-theme="light"]) .logo.escurece-claro { filter: none; }
+  :root:not([data-theme="light"]) .logo.inverte-escuro { filter: invert(1); }
+  :root:not([data-theme="light"]) .logo.clareia-escuro { filter: brightness(1.9); }
 }
 :root[data-theme="dark"] {
   --paper: #0F1924;
@@ -39,6 +43,10 @@
   --term-bg: #08111A;
   color-scheme: dark;
 }
+:root[data-theme="dark"] .logo.inverte-claro,
+:root[data-theme="dark"] .logo.escurece-claro { filter: none; }
+:root[data-theme="dark"] .logo.inverte-escuro { filter: invert(1); }
+:root[data-theme="dark"] .logo.clareia-escuro { filter: brightness(1.9); }
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -157,6 +165,56 @@ main, .contact { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter)
 }
 @keyframes line-in { to { opacity: 1; } }
 
+/* Ferramentas: faixa de logos abaixo do topo. Parada sem JS ou com "reduzir movimento" */
+.tools {
+  margin: clamp(3rem, 7vw, 4.5rem) 0 0;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  gap: 1.75rem;
+}
+.tools-row { display: grid; gap: 0.85rem; }
+.tools dt { color: var(--muted); font-size: 0.9rem; }
+.tools ul {
+  list-style: none;
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: 1.25rem 2.75rem;
+}
+.tools li {
+  display: inline-flex; align-items: center; gap: 0.75rem;
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem); font-weight: 500;
+  color: var(--muted); white-space: nowrap;
+}
+.logo { width: 2.25rem; height: 2.25rem; object-fit: contain; flex: none; }
+.logo.mono {
+  display: inline-grid; place-items: center;
+  border-radius: 7px;
+  background: var(--ink); color: var(--paper);
+  font: 800 0.8rem/1 var(--sans); font-stretch: 110%; letter-spacing: -0.02em;
+}
+/* Logos que somem no fundo: o Bash é branco, o GitHub é preto, o MySQL é escuro */
+.logo.inverte-claro { filter: invert(1); }
+.logo.escurece-claro { filter: brightness(0.7); }
+
+.marquee.is-moving {
+  display: flex;
+  overflow: hidden;
+  -webkit-mask: linear-gradient(90deg, transparent, #000 3rem, #000 calc(100% - 3rem), transparent);
+  mask: linear-gradient(90deg, transparent, #000 3rem, #000 calc(100% - 3rem), transparent);
+}
+.marquee.is-moving .track {
+  flex: none;
+  flex-wrap: nowrap;
+  padding-right: 2.75rem;
+  animation: marquee var(--dur, 40s) linear infinite;
+}
+.tools-row + .tools-row .marquee.is-moving .track { animation-direction: reverse; }
+.marquee.is-moving:hover .track { animation-play-state: paused; }
+@keyframes marquee { to { transform: translateX(-100%); } }
+@media (prefers-reduced-motion: reduce) {
+  .marquee.is-moving .track { animation: none; }
+}
+
 /* Sections */
 .block { padding: clamp(3rem, 7vw, 5rem) 0; border-top: 1px solid var(--rule); }
 .block > h2, .contact > h2 {
@@ -272,6 +330,7 @@ main, .contact { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter)
   .term pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 1rem; }
   .term .ln i { display: none; }
   .skills, .courses, .edu { grid-template-columns: minmax(0, 1fr); }
+  .logo { width: 1.9rem; height: 1.9rem; }
 }
 @media (max-width: 380px) {
   .term pre { font-size: 0.66rem; padding: 0.9rem 0.85rem; }
