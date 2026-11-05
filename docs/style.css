@@ -369,15 +369,25 @@ main { counter-reset: secao; }
 .job li + li { margin-top: 0.35rem; }
 .job li::marker { color: var(--muted); }
 
-/* Skills */
+/* Competências */
 .skills {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 2rem 2.5rem;
+  gap: 1rem;
 }
-.skills div { border-top: 2px solid var(--ink); padding-top: 0.85rem; }
+.skills div {
+  padding: 1.1rem 1.15rem 1.2rem;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-top: 2px solid var(--ink);
+  border-radius: 4px 4px 10px 10px;
+  transition: border-color 0.2s ease, transform 0.2s var(--ease-out);
+}
 .skills dt { font-weight: 700; font-stretch: 110%; margin-bottom: 0.4rem; }
-.skills dd { color: var(--muted); }
+.skills dd { color: var(--muted); font-size: 0.97rem; }
+@media (hover: hover) and (pointer: fine) {
+  .skills div:hover { border-top-color: var(--pass); transform: translateY(-2px); }
+}
 
 /* Education */
 .edu {
@@ -460,7 +470,7 @@ main { counter-reset: secao; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .social a, .btn, .btn .arrow, .mark, .topbar, .topbar nav a::after { transition: none; }
+  .social a, .btn, .btn .arrow, .mark, .skills div, .topbar, .topbar nav a::after { transition: none; }
 }
 
 /* Responsivo */
