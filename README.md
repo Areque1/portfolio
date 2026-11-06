@@ -16,6 +16,7 @@ docs/                    o site publicado pelo GitHub Pages
 │   ├── entrada.js       entrada suave das seções ao rolar
 │   └── ferramentas.js   faixa animada de ferramentas
 ├── icons/               logos das ferramentas (créditos em CREDITOS.md)
+├── fonts/               Archivo e IBM Plex Mono servidas pelo próprio site (licenças OFL)
 ├── img/previa.png       imagem de prévia ao compartilhar o link
 ├── robots.txt           regras para os buscadores
 ├── sitemap.xml          páginas do site para o Google Search Console
@@ -77,4 +78,5 @@ npm run report        # abre o relatório HTML da última execução
 | `tests/acessibilidade.spec.ts` | Idioma, hierarquia de títulos, navegação por teclado, foco visível, contraste WCAG AA nos temas claro e escuro e animação com "reduzir movimento" |
 | `tests/ferramentas.spec.ts` | Cada ferramenta tem nome e logo, a faixa anda nos dois sentidos, para com o mouse em cima e fica parada com "reduzir movimento", e os logos recebem o filtro certo em cada tema |
 | `tests/constelacao.spec.ts` | A constelação cobre a janela atrás do conteúdo sem bloquear cliques, anima, fica parada com "reduzir movimento", rareia até o rodapé, reage ao ponteiro, não estica ao mudar a altura da janela e some na impressão |
+| `tests/seguranca.spec.ts` | Política de segurança de conteúdo restritiva, sem violações ao carregar, script inline injetado bloqueado e nenhuma requisição a outros domínios |
 | `tests/links.spec.ts` | Cada certificado abre o curso certo, no meu nome |
