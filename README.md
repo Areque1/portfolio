@@ -15,7 +15,11 @@ docs/                    o site publicado pelo GitHub Pages
 │   ├── topo.js          barra do topo e seção atual no menu
 │   ├── entrada.js       entrada suave das seções ao rolar
 │   └── ferramentas.js   faixa animada de ferramentas
-└── icons/               logos das ferramentas (créditos em CREDITOS.md)
+├── icons/               logos das ferramentas (créditos em CREDITOS.md)
+├── img/previa.png       imagem de prévia ao compartilhar o link
+├── robots.txt           regras para os buscadores
+├── sitemap.xml          páginas do site para o Google Search Console
+└── CNAME                domínio do GitHub Pages (areque.com.br)
 
 tests/                   testes E2E do site (Playwright)
 ├── helpers.ts           funções compartilhadas pelos testes
