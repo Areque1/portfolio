@@ -1,13 +1,12 @@
 # Créditos dos logos
 
 - [Devicon](https://devicon.dev) 2.18.0, licença MIT (reproduzida abaixo): `playwright.svg`,
-  `python.svg`, `pytest.svg`, `vitest.svg`, `postman.svg`, `swagger.svg`, `gitlab.svg`,
-  `docker.svg`, `linux.svg`, `c.svg`, `sqlite.svg`, `github.svg` (variantes *original*),
-  `jest.svg` (*plain*) e `windows.svg` (*windows11-original*).
+  `typescript.svg`, `javascript.svg`, `python.svg`, `pytest.svg`, `vitest.svg`, `postman.svg`,
+  `swagger.svg`, `gitlab.svg`, `docker.svg`, `git.svg`, `linux.svg`, `c.svg`, `sqlite.svg`,
+  `mysql.svg`, `github.svg`, `bash.svg` (variantes *original*), `jest.svg` (*plain*) e
+  `windows.svg` (*windows11-original*).
 - [Simple Icons](https://simpleicons.org) 16.36.0, licença CC0 1.0: `testinglibrary.svg` e
   `ubiquiti.svg`, com a cor oficial de cada marca aplicada.
-- `typescript.svg`, `javascript.svg`, `git.svg`, `mysql.svg` e `bash.svg`: versões coloridas dos
-  logos oficiais, salvas do portfólio https://potifolio-80da2.web.app/ usado como referência.
 
 As marcas pertencem aos seus donos e aparecem só para indicar as ferramentas que uso.
 

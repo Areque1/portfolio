@@ -32,7 +32,6 @@
     --topbar-bg: rgba(15, 25, 36, 0.86);
     color-scheme: dark;
   }
-  :root:not([data-theme="light"]) .logo.inverte-claro,
   :root:not([data-theme="light"]) .logo.escurece-claro { filter: none; }
   :root:not([data-theme="light"]) .logo.inverte-escuro { filter: invert(1); }
   :root:not([data-theme="light"]) .logo.clareia-escuro { filter: brightness(1.9); }
@@ -48,7 +47,6 @@
   --topbar-bg: rgba(15, 25, 36, 0.86);
   color-scheme: dark;
 }
-:root[data-theme="dark"] .logo.inverte-claro,
 :root[data-theme="dark"] .logo.escurece-claro { filter: none; }
 :root[data-theme="dark"] .logo.inverte-escuro { filter: invert(1); }
 :root[data-theme="dark"] .logo.clareia-escuro { filter: brightness(1.9); }
@@ -290,8 +288,7 @@ section[id], footer[id] { scroll-margin-top: var(--topbar-h); }
   background: var(--ink); color: var(--paper);
   font: 800 0.8rem/1 var(--sans); font-stretch: 110%; letter-spacing: -0.02em;
 }
-/* Logos que somem no fundo: o Bash é branco, o GitHub é preto, o MySQL é escuro */
-.logo.inverte-claro { filter: invert(1); }
+/* Logos que somem no fundo: o C é claro; o Bash, o GitHub e o MySQL são escuros */
 .logo.escurece-claro { filter: brightness(0.7); }
 
 .marquee.is-moving {

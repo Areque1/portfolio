@@ -116,8 +116,8 @@ test.describe('com "reduzir movimento" ligado', () => {
 
 // Logos que sumiriam no fundo recebem filtro só no tema em que somem.
 const FILTROS = {
-  light: { Bash: 'invert(1)', C: 'brightness(0.7)', GitHub: 'none', MySQL: 'none' },
-  dark: { Bash: 'none', C: 'none', GitHub: 'invert(1)', MySQL: 'brightness(1.9)' },
+  light: { Bash: 'none', C: 'brightness(0.7)', GitHub: 'none', MySQL: 'none' },
+  dark: { Bash: 'invert(1)', C: 'none', GitHub: 'invert(1)', MySQL: 'brightness(1.9)' },
 } as const;
 
 for (const tema of ['light', 'dark'] as const) {
