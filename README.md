@@ -2,6 +2,8 @@
 
 Site estático (HTML, CSS e JavaScript, sem build) com meu currículo: QA, automação de testes e infraestrutura de TI.
 
+No ar em **https://areque.com.br**.
+
 ## Estrutura
 
 ```text
@@ -38,11 +40,6 @@ npm run serve
 ```
 
 e acesse http://localhost:8765.
-
-## Publicar no GitHub Pages
-
-Em **Settings → Pages**, escolha *Deploy from a branch*, branch `main`, pasta `/docs`.
-O site fica em `https://areque1.github.io/portfolio/`.
 
 ## Branches e versões
 
